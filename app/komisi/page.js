@@ -3,6 +3,6 @@ import ContentBox from '../component/contentBox';
 
 export default async function Komisi() {
   const komisi = await komisiApi();
-  // console.log(komisi);
+  console.log(komisi);
   return <ContentBox content={komisi} />;
 }

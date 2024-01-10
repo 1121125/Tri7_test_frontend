@@ -13,13 +13,13 @@ export default async function Header() {
           <div className="flex gap-2">
             <Link
               href={global.link.login}
-              className="bg-orange text-white p-2 rounded-md"
+              className="bg-orange text-white p-2 rounded-md hover:bg-yellow"
             >
               Login
             </Link>
             <Link
               href={global.link.register}
-              className="bg-gray text-white p-2 rounded-md"
+              className="bg-gray text-white p-2 rounded-md hover:bg-[#BBBBBB]"
             >
               Daftar sekarang
             </Link>

@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 export default function ContentBox({ content }) {
@@ -13,7 +14,7 @@ export default function ContentBox({ content }) {
             onClick={() => setSlide(index)}
             className={`${
               slide === index ? 'bg-orange' : 'bg-navy'
-            } cursor-pointer flex justify-center items-center text-white  w-[210px] h-[48px] rounded-ss-lg rounded-tr-lg`}
+            } cursor-pointer hover:bg-orange flex justify-center items-center text-white  w-[210px] h-[48px] rounded-ss-lg rounded-tr-lg`}
           >
             {el.title}
           </div>
@@ -21,7 +22,17 @@ export default function ContentBox({ content }) {
       </div>
 
       <div className="py-7 px-10 transition-all w-fit">
-        <div dangerouslySetInnerHTML={{ __html: content[slide].content }} />
+        {content.map(
+          (el, index) =>
+            slide === index && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                dangerouslySetInnerHTML={{ __html: el.content }}
+              />
+            )
+        )}
       </div>
     </div>
   );

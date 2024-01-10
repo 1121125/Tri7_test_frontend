@@ -13,21 +13,25 @@ export default async function Home() {
         </Link>
       ))}
 
-      <div className="flex justify-between overflow-hidden py-10 max-w-[1250px] mx-auto">
+      <div className="flex justify-between gap-10 overflow-hidden py-10 max-w-[1250px] mx-auto flex-wrap">
         {home.offers.map((el, index) => (
-          <img src={el.img} className="rounded-lg w-[384px]" key={index} />
+          <img
+            src={el.img}
+            className="rounded-lg w-[384px] mx-auto"
+            key={index}
+          />
         ))}
       </div>
       <div className="bg-[#000]/5">
         <div
           dangerouslySetInnerHTML={{ __html: home.content }}
-          className="py-10 max-w-[1250px] mx-auto"
+          className="py-10 max-w-[1250px] mx-auto px-4"
         />
-        <div className="flex justify-between mx-auto max-w-[1250px] gap-[50px] py-10">
+        <div className="flex justify-between mx-auto max-w-[1250px] gap-[50px] py-10 px-4 flex-wrap">
           {home.services.map((el, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center flex-1"
+              className="flex flex-col items-center justify-center flex-1 mx-auto"
             >
               <img src={el.img} />
               <p className="text-navy font-extrabold text-2xl text-center">

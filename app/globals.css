@@ -13,6 +13,10 @@ body {
   background-color: #d9d9d9;
 }
 
+body * {
+  transition: all ease-in-out 0.3s;
+}
+
 .contentBox h3 {
   @apply text-2xl font-bold py-2 text-gray-700;
 }
@@ -22,7 +26,7 @@ body {
 }
 
 .contentBox .table-desc {
-  @apply w-[80%] mx-auto;
+  @apply w-[90%] mx-auto;
 }
 
 .contentBox table,
@@ -32,12 +36,24 @@ body {
 }
 
 .contentBox table {
-  @apply border-collapse rounded-2xl mx-auto my-10 w-[80%];
+  @apply border-collapse rounded-2xl mx-auto my-10 w-[90%];
 }
 
 .contentBox th,
 .contentBox td {
-  @apply p-4 text-center;
+  @apply p-2 text-center text-gray-700;
+}
+
+th {
+  @apply text-xl;
+}
+
+th[colspan='3'] {
+  @apply bg-[#00276C] text-white text-2xl rounded-t-lg;
+}
+
+td:last-child {
+  @apply rounded-b-lg;
 }
 
 .contentBox .top-space {
