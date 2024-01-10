@@ -14,7 +14,7 @@ body {
 }
 
 .contentBox h3 {
-  @apply text-xl font-semibold py-2 text-gray-700;
+  @apply text-2xl font-bold py-2 text-gray-700;
 }
 
 .contentBox p {
@@ -47,4 +47,34 @@ body {
 .contentBox ol,
 .contentBox li {
   @apply list-decimal list-inside text-gray-700 p-4;
+}
+
+.make-bold {
+  @apply font-semibold;
+}
+
+.pointer-process {
+  @apply flex flex-wrap gap-10 py-5 gap-y-3;
+}
+.pointer {
+  @apply bg-navy py-3 px-3 text-white relative;
+}
+.pointer:after {
+  content: '';
+  position: absolute;
+  right: -24px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 24px solid #001e5a;
+  border-top: 24px solid transparent;
+  border-bottom: 24px solid transparent;
+}
+.pointer-alt {
+  @apply bg-orange;
+}
+.pointer-alt::after {
+  border-left: 24px solid #ff7d00;
+  border-top: 24px solid transparent;
+  border-bottom: 24px solid transparent;
 }

@@ -20,7 +20,7 @@ export default function ContentBox({ content }) {
         ))}
       </div>
 
-      <div className="p-5 px-10 transition-all w-fit">
+      <div className="py-7 px-10 transition-all w-fit">
         <div dangerouslySetInnerHTML={{ __html: content[slide].content }} />
       </div>
     </div>
