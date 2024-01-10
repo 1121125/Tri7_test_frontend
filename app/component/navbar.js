@@ -9,7 +9,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   // console.log(pathname);
   return (
-    <div className="mx-auto max-w-[1250px] flex justify-between items-center px-4 py-2 text-white font-semibold">
+    <div className="hidden mx-auto max-w-[1250px] lg:flex justify-between items-center px-4 py-2 text-white font-semibold">
       <div className="flex justify-between w-[60%]">
         <Link
           href={'/'}

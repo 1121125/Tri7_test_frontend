@@ -6,8 +6,8 @@ import { useState } from 'react';
 export default function ContentBox({ content }) {
   const [slide, setSlide] = useState(0);
   return (
-    <div className="contentBox relative mx-auto mt-[90px] bg-white max-w-[1200px] rounded-xl rounded-ss-none">
-      <div className="absolute top-[-48px] flex gap-[10px]">
+    <>
+      <div className="flex gap-[10px] flex-wrap mt-[80px] max-w-[1200px] mx-auto">
         {content.map((el, index) => (
           <div
             key={index}
@@ -20,20 +20,21 @@ export default function ContentBox({ content }) {
           </div>
         ))}
       </div>
-
-      <div className="py-7 px-10 transition-all w-fit">
-        {content.map(
-          (el, index) =>
-            slide === index && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                dangerouslySetInnerHTML={{ __html: el.content }}
-              />
-            )
-        )}
+      <div className="contentBox mx-auto  bg-white max-w-[1200px] rounded-xl rounded-ss-none">
+        <div className="py-7 px-10 transition-all w-fit">
+          {content.map(
+            (el, index) =>
+              slide === index && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                  dangerouslySetInnerHTML={{ __html: el.content }}
+                />
+              )
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
