@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { globalApi } from './util/api';
+import { globalApi } from '../util/api';
 import Navbar from './navbar';
 
 export default async function Header() {

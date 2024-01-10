@@ -3,7 +3,7 @@ export async function globalApi() {
     'https://super7tech.com/web_developer_exam_sr/api'
   );
   const data = await response.json();
-  // console.log(data);
+  console.log(data);
   const response2 = await fetch(data.routes.global);
   const global = await response2.json();
   return global;
@@ -27,4 +27,24 @@ export async function komisiApi() {
   const response2 = await fetch(data.routes.komisi);
   const komisi = await response2.json();
   return komisi;
+}
+
+export async function peraturanApi() {
+  const response = await fetch(
+    'https://super7tech.com/web_developer_exam_sr/api'
+  );
+  const data = await response.json();
+  const response2 = await fetch(data.routes.peraturan);
+  const peraturan = await response2.json();
+  return peraturan;
+}
+
+export async function pertanyaanAndJawabanApi() {
+  const response = await fetch(
+    'https://super7tech.com/web_developer_exam_sr/api'
+  );
+  const data = await response.json();
+  const response2 = await fetch(data.routes.pertanyaanAndJawaban);
+  const pertanyaanAndJawaban = await response2.json();
+  return pertanyaanAndJawaban;
 }

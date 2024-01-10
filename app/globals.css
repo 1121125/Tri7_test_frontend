@@ -13,44 +13,38 @@ body {
   background-color: #d9d9d9;
 }
 
-.contentBox {
-  h3 {
-    font-size: 24px;
-    font-weight: 600;
-    padding: 10px 0;
-    color: #505050;
-  }
-  p {
-    color: #505050;
-  }
-  .table-desc {
-    width: 80%;
-    margin: 0 auto;
-  }
-  table,
-  th,
-  td {
-    border: 1px solid;
-  }
-  table {
-    border-collapse: collapse;
-    margin: 20px auto;
-    border-radius: 20px;
-    width: 80%;
-  }
-  th,
-  td {
-    padding: 10px;
-    text-align: center;
-  }
-  .top-space {
-    margin-top: 20px;
-  }
-  ol,
-  li {
-    list-style-type: decimal;
-    list-style-position: inside;
-    color: #505050;
-    padding: 10px;
-  }
+.contentBox h3 {
+  @apply text-xl font-semibold py-2 text-gray-700;
+}
+
+.contentBox p {
+  @apply text-gray-700;
+}
+
+.contentBox .table-desc {
+  @apply w-[80%] mx-auto;
+}
+
+.contentBox table,
+.contentBox th,
+.contentBox td {
+  @apply border border-solid;
+}
+
+.contentBox table {
+  @apply border-collapse rounded-2xl mx-auto my-10 w-[80%];
+}
+
+.contentBox th,
+.contentBox td {
+  @apply p-4 text-center;
+}
+
+.contentBox .top-space {
+  @apply mt-10;
+}
+
+.contentBox ol,
+.contentBox li {
+  @apply list-decimal list-inside text-gray-700 p-4;
 }

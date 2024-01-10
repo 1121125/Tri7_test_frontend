@@ -32,9 +32,9 @@ export default function Navbar() {
         Peraturan
       </Link>
       <Link
-        href={'./jawaban'}
+        href={'./pertanyaanAndJawaban'}
         className={`active:text-yellow hover:text-yellow ${
-          pathname === '/jawaban' ? 'text-yellow' : 'text-white'
+          pathname === '/pertanyaanAndJawaban' ? 'text-yellow' : 'text-white'
         }`}
       >
         Pertanyaan & Jawaban

@@ -1,5 +1,5 @@
-import { globalApi } from './util/api';
 import Link from 'next/link';
+import { globalApi } from '../util/api';
 
 export default async function Footer() {
   const global = await globalApi();

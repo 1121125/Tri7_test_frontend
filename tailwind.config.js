@@ -15,6 +15,9 @@ module.exports = {
         orange: '#FF7D00',
         yellow: '#FAA41F',
       },
+      textColor: {
+        'gray-700': '#505050',
+      },
     },
   },
   plugins: [],
