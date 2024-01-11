@@ -3,7 +3,7 @@ export async function globalApi() {
     'https://super7tech.com/web_developer_exam_sr/api'
   );
   const data = await response.json();
-  console.log(data);
+  // console.log(data);
   const response2 = await fetch(data.routes.global);
   const global = await response2.json();
   return global;

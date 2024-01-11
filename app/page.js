@@ -1,10 +1,8 @@
 import Link from 'next/link';
 import { homeApi } from './util/api';
-import { parse } from 'node-html-parser';
 
 export default async function Home() {
   const home = await homeApi();
-  // console.log(home);
   return (
     <div className="">
       {home.slideshow.map((el, index) => (
@@ -13,7 +11,7 @@ export default async function Home() {
         </Link>
       ))}
 
-      <div className="flex justify-between gap-10 overflow-hidden py-10 max-w-[1250px] mx-auto flex-wrap">
+      <div className="flex justify-between gap-10 overflow-hidden py-10 max-w-[1250px] mx-auto flex-wrap px-2">
         {home.offers.map((el, index) => (
           <img
             src={el.img}
