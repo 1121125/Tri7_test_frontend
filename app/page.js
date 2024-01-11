@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { fetctData } from './util/api';
 
-export default async function Home() {
+export default async function Page() {
   const home = await fetctData('homePage');
   return (
     <div className="">
