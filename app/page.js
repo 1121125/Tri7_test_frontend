@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import { homeApi } from './util/api';
+import { fetctData } from './util/api';
 
 export default async function Home() {
-  const home = await homeApi();
+  const home = await fetctData('homePage');
   return (
     <div className="">
       {home.slideshow.map((el, index) => (
-        <Link href={el.link} key={index}>
+        <Link href={el.link} key={index} className="max-w-[900px] mx-auto">
           <img src={el.img} alt={el.name} className="mx-auto" />
         </Link>
       ))}

@@ -1,9 +1,8 @@
 import ContentBox from '../component/contentBox';
-import { pertanyaanAndJawabanApi } from '../util/api';
+import { fetctData } from '../util/api';
 
 export default async function Jawaban() {
-  const pertanyaanAndJawaban = await pertanyaanAndJawabanApi();
-  // console.log(pertanyaanAndJawaban);
+  const pertanyaanAndJawaban = await fetctData('pertanyaanAndJawaban');
   return (
     <div className="px-3">
       <ContentBox content={pertanyaanAndJawaban} />

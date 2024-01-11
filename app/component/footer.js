@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { globalApi } from '../util/api';
+import { fetctData } from '../util/api';
 
 export default async function Footer() {
-  const global = await globalApi();
+  const global = await fetctData('global');
   // console.log(global);
   return (
     <div className="w-full">

@@ -1,50 +1,10 @@
-export async function globalApi() {
-  const response = await fetch(
-    'https://super7tech.com/web_developer_exam_sr/api'
-  );
-  const data = await response.json();
+const baseApiUrl = 'https://super7tech.com/web_developer_exam_sr/api';
+
+export async function fetctData(target) {
+  const route = await fetch(baseApiUrl);
+  const routeData = await route.json();
   // console.log(data);
-  const response2 = await fetch(data.routes.global);
-  const global = await response2.json();
-  return global;
-}
-
-export async function homeApi() {
-  const response = await fetch(
-    'https://super7tech.com/web_developer_exam_sr/api'
-  );
-  const data = await response.json();
-  const response2 = await fetch(data.routes.homePage);
-  const home = await response2.json();
-  return home;
-}
-
-export async function komisiApi() {
-  const response = await fetch(
-    'https://super7tech.com/web_developer_exam_sr/api'
-  );
-  const data = await response.json();
-  const response2 = await fetch(data.routes.komisi);
-  const komisi = await response2.json();
-  return komisi;
-}
-
-export async function peraturanApi() {
-  const response = await fetch(
-    'https://super7tech.com/web_developer_exam_sr/api'
-  );
-  const data = await response.json();
-  const response2 = await fetch(data.routes.peraturan);
-  const peraturan = await response2.json();
-  return peraturan;
-}
-
-export async function pertanyaanAndJawabanApi() {
-  const response = await fetch(
-    'https://super7tech.com/web_developer_exam_sr/api'
-  );
-  const data = await response.json();
-  const response2 = await fetch(data.routes.pertanyaanAndJawaban);
-  const pertanyaanAndJawaban = await response2.json();
-  return pertanyaanAndJawaban;
+  const targetData = await fetch(routeData.routes[target]);
+  const data = await targetData.json();
+  return data;
 }

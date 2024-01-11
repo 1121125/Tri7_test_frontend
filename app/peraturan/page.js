@@ -1,8 +1,8 @@
 import ContentBox from '../component/contentBox';
-import { peraturanApi } from '../util/api';
+import { fetctData } from '../util/api';
 
 export default async function Peraturan() {
-  const peraturan = await peraturanApi();
+  const peraturan = await fetctData('peraturan');
   return (
     <div className="px-3">
       <ContentBox content={peraturan} />

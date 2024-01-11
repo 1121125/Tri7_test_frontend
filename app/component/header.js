@@ -1,10 +1,8 @@
-import Link from 'next/link';
-import { globalApi } from '../util/api';
-import Navbar from './navbar';
+import { fetctData } from '../util/api';
 import HeroHeader from './heroHeader';
 
 export default async function Header() {
-  const global = await globalApi();
+  const global = await fetctData('global');
 
   return <HeroHeader global={global} />;
 }

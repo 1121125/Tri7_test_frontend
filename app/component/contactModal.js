@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import Input from './input';
+import axios from 'axios';
 
 export default function ContactModal({ setIsOpen }) {
   const [loading, setLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(null);
+  const [errorMessage, setErrorMessage] = useState([]);
   const [input, setInput] = useState({
     fullname: '',
     email: '',
@@ -17,28 +19,27 @@ export default function ContactModal({ setIsOpen }) {
   const handleSubmitForm = async (e) => {
     e.preventDefault();
     try {
+      setErrorMessage([]);
       setLoading(true);
-      console.log(JSON.stringify(input));
-      const formData = { field: input };
-      const response = await fetch(
-        'https://super7tech.com/web_developer_exam_sr/api/sendMessage',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
+      const formData = new FormData();
+      for (let key in input) {
+        if (input[key]) {
+          formData.append(`${key}`, input[key]);
         }
-      );
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
       }
-      const responseData = await response.json();
-      console.log(('Form Submitted successfully', responseData));
+      const response = await axios.post(
+        'https://super7tech.com/web_developer_exam_sr/api/sendMessage',
+        formData
+      );
       setIsSuccess('yes');
     } catch (error) {
       console.log('Error Submit Form', error);
       setIsSuccess('no');
+      const errorArr = [];
+      for (let key in error.response.data.errors.field) {
+        errorArr.push(error.response.data.errors.field[key]);
+      }
+      setErrorMessage(errorArr);
     } finally {
       setLoading(false);
     }
@@ -101,7 +102,7 @@ export default function ContactModal({ setIsOpen }) {
             {isSuccess === 'yes' && !loading ? (
               <div className="flex items-center gap-1">
                 <img src="./success.png" className="h-[30px]" />
-                <p className="text-black text-sm">Submit Success</p>
+                <p className="text-black text-sm">{response.data.message}</p>
               </div>
             ) : isSuccess === 'no' && !loading ? (
               <div className="flex items-center gap-1">
@@ -111,6 +112,13 @@ export default function ContactModal({ setIsOpen }) {
             ) : (
               ''
             )}
+          </div>
+          <div className="text-red-500">
+            {errorMessage.map((el) => (
+              <>
+                <div>{el}</div>
+              </>
+            ))}
           </div>
         </form>
       </div>
