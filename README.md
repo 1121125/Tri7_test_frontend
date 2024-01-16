@@ -14,15 +14,15 @@ git clone https://github.com/1121125/Tri7_test_frontend.git
 
 2. Navigate to the project directory:
 
-   ```bash
-   cd Tri7_test_frontend
-   ```
+```bash
+cd Tri7_test_frontend
+```
 
 3. Install dependencies using npm:
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
 4. To start project
 
